@@ -1,10 +1,20 @@
 from flask      import Flask, request, current_app, jsonify
-from .utilities import submit, status
+# from .utilities import status ,submit
+
+# importing sys
+import sys
+# adding Folder_2/subfolder to the system path
+sys.path.insert(0, '/home/jzruz/21projects/vid_ai-flask-demo-python/api/vid_ai')
+
+from main import submit,status
+
 app = Flask(
     __name__,
     static_url_path= '', 
     static_folder  = '../web'
 )
+
+
 
 @app.route('/')
 def index():
